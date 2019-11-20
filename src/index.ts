@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import '@babel/polyfill'
 import { readJsonSync, pathExistsSync, readdirSync } from 'fs-extra';
 import * as path from 'path'

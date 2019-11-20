@@ -1,6 +1,6 @@
 {
   "Basic": {
-    "path": "./examples/Template",
+    "path": "./Template",
     "variables": ["componentName", "fileName", "storyName"]
   }
 }
