@@ -1,0 +1,21 @@
+path:./some/stories/{fileName}.stories.js
+
+
+import React from 'react';
+
+import {componentName} from '../components/{fileName}';
+import { StoryFn } from '@storybook/addons';
+import { StoryFnReactReturnType } from '@storybook/react/dist/client/preview/types';
+
+export default {
+  title: '{storyName}',
+  decorators: [
+    (story: StoryFn<StoryFnReactReturnType>) => (
+      <div style={{ width: '75%', padding: '1em' }}>{story()}</div>
+    ),
+  ],
+};
+
+export const basic = () => {
+  return <{componentName} />;
+};

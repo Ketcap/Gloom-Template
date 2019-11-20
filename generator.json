@@ -1,0 +1,6 @@
+{
+  "Basic": {
+    "path": "./Basic",
+    "variables": ["componentName", "fileName", "storyName"]
+  }
+}

@@ -1,0 +1,14 @@
+path:./some/components/{fileName}/{fileName}.js
+variables:hello
+import React from "react";
+
+class {componentName} extends React.Component{
+
+  render(){
+    return (
+      <div>{hello}</div>
+    );
+  }
+}
+
+export default {componentName}

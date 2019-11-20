@@ -1,0 +1,5 @@
+path:./some/components/{fileName}/index.js
+
+import {componentName} from './index.js';
+
+export default {componentName};
