@@ -17,14 +17,15 @@
   "dependencies": {
     "chalk": "^2.4.2",
     "fs-extra": "^8.1.0",
-    "inquirer": "^7.0.0"
+    "inquirer": "^7.0.0",
+    "@babel/polyfill": "^7.7.0",
+    "@babel/register": "^7.7.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.0",
     "@babel/core": "^7.7.0",
     "@babel/node": "^7.7.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
-    "@babel/polyfill": "^7.7.0",
     "@babel/preset-env": "^7.7.0",
     "@babel/preset-typescript": "^7.7.2",
     "@oakslab/ooo-config": "0.0.7",
