@@ -39,6 +39,8 @@ You can put any type of files in the folder.
 
 - 2nd line can have `variables:var1,var2` each variable needs to be seperated by comma.
 
+- Variables should be like `{var1}` inside the file
+
 To install:
 `npm install -g gloom-template`
 
