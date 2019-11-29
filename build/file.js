@@ -1,9 +1,21 @@
 "use strict";
 
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
+
+var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
+
+var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
+
+var _typeof2 = _interopRequireDefault(require("@babel/runtime/helpers/typeof"));
+
+var _asyncIterator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncIterator"));
 
 var _chalk = _interopRequireDefault(require("chalk"));
 
@@ -13,21 +25,9 @@ var _fsExtra = require("fs-extra");
 
 var _util = require("./util");
 
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _asyncIterator(iterable) { var method; if (typeof Symbol !== "undefined") { if (Symbol.asyncIterator) { method = iterable[Symbol.asyncIterator]; if (method != null) return method.call(iterable); } if (Symbol.iterator) { method = iterable[Symbol.iterator]; if (method != null) return method.call(iterable); } } throw new TypeError("Object is not async iterable"); }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 var question = function question(variable, fileSpesific) {
   return {
@@ -40,7 +40,7 @@ var question = function question(variable, fileSpesific) {
 var _callee = function _callee(filePaths, template) {
   var answers, _iteratorNormalCompletion, _didIteratorError, _iteratorError, _loop, _iterator, _step, _value, _ret;
 
-  return regeneratorRuntime.async(function _callee$(_context2) {
+  return _regenerator["default"].async(function _callee$(_context2) {
     while (1) {
       switch (_context2.prev = _context2.next) {
         case 0:
@@ -55,7 +55,7 @@ var _callee = function _callee(filePaths, template) {
 
         case 4:
           _context2.next = 6;
-          return regeneratorRuntime.awrap(inquirer.prompt(template.variables.map(function (e) {
+          return _regenerator["default"].awrap(inquirer.prompt(template.variables.map(function (e) {
             return question(e);
           })));
 
@@ -69,7 +69,7 @@ var _callee = function _callee(filePaths, template) {
 
           _loop = function _loop() {
             var path, file, pathReg, varReg, outputRegex, variableRegex, paths, fileName, output, inlineVariable, inlineVariables, deleteRegex, fileExists, answer;
-            return regeneratorRuntime.async(function _loop$(_context) {
+            return _regenerator["default"].async(function _loop$(_context) {
               while (1) {
                 switch (_context.prev = _context.next) {
                   case 0:
@@ -103,7 +103,7 @@ var _callee = function _callee(filePaths, template) {
                     (0, _util.infoLog)("Local variable found", "Naming variables from ".concat(_chalk["default"].green(fileName)));
                     inlineVariable = variableRegex[1].split(',');
                     _context.next = 16;
-                    return regeneratorRuntime.awrap(inquirer.prompt(inlineVariable.map(function (e) {
+                    return _regenerator["default"].awrap(inquirer.prompt(inlineVariable.map(function (e) {
                       return question(e, true);
                     })));
 
@@ -122,7 +122,7 @@ var _callee = function _callee(filePaths, template) {
                     deleteRegex = new RegExp(/(path:(.*))|(variables:(.*))/gi);
                     file = file.replace(deleteRegex, '').trim();
                     _context.next = 23;
-                    return regeneratorRuntime.awrap((0, _fsExtra.pathExistsSync)(output));
+                    return _regenerator["default"].awrap((0, _fsExtra.pathExistsSync)(output));
 
                   case 23:
                     fileExists = _context.sent;
@@ -133,7 +133,7 @@ var _callee = function _callee(filePaths, template) {
                     }
 
                     _context.next = 27;
-                    return regeneratorRuntime.awrap(inquirer.prompt([{
+                    return _regenerator["default"].awrap(inquirer.prompt([{
                       type: 'confirm',
                       name: 'replace',
                       message: "".concat(_chalk["default"].green(output), " is already created. Do you want to ").concat(_chalk["default"].greenBright('replace'), " it"),
@@ -178,17 +178,17 @@ var _callee = function _callee(filePaths, template) {
             }, null, null, [[30, 35]]);
           };
 
-          _iterator = _asyncIterator(filePaths);
+          _iterator = (0, _asyncIterator2["default"])(filePaths);
 
         case 12:
           _context2.next = 14;
-          return regeneratorRuntime.awrap(_iterator.next());
+          return _regenerator["default"].awrap(_iterator.next());
 
         case 14:
           _step = _context2.sent;
           _iteratorNormalCompletion = _step.done;
           _context2.next = 18;
-          return regeneratorRuntime.awrap(_step.value);
+          return _regenerator["default"].awrap(_step.value);
 
         case 18:
           _value = _context2.sent;
@@ -199,12 +199,12 @@ var _callee = function _callee(filePaths, template) {
           }
 
           _context2.next = 22;
-          return regeneratorRuntime.awrap(_loop());
+          return _regenerator["default"].awrap(_loop());
 
         case 22:
           _ret = _context2.sent;
 
-          if (!(_typeof(_ret) === "object")) {
+          if (!((0, _typeof2["default"])(_ret) === "object")) {
             _context2.next = 25;
             break;
           }
@@ -236,7 +236,7 @@ var _callee = function _callee(filePaths, template) {
           }
 
           _context2.next = 39;
-          return regeneratorRuntime.awrap(_iterator["return"]());
+          return _regenerator["default"].awrap(_iterator["return"]());
 
         case 39:
           _context2.prev = 39;

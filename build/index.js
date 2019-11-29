@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 "use strict";
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
 
-require("@babel/register");
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
-require("@babel/polyfill");
+var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 
 var _fsExtra = require("fs-extra");
 
@@ -19,15 +19,9 @@ var _template = _interopRequireDefault(require("./template"));
 
 var _file = _interopRequireDefault(require("./file"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 var init = function init() {
   var generator, filePath, template, selectedTemplate, files, dir, readDirExists;
-  return regeneratorRuntime.async(function init$(_context) {
+  return _regenerator["default"].async(function init$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
@@ -36,7 +30,7 @@ var init = function init() {
           _context.prev = 2;
           filePath = "".concat(process.cwd(), "/generator.json");
           _context.next = 6;
-          return regeneratorRuntime.awrap((0, _fsExtra.readJsonSync)(filePath));
+          return _regenerator["default"].awrap((0, _fsExtra.readJsonSync)(filePath));
 
         case 6:
           generator = _context.sent;
@@ -71,7 +65,7 @@ var init = function init() {
         case 15:
           _context.prev = 15;
           _context.next = 18;
-          return regeneratorRuntime.awrap((0, _template["default"])(generator));
+          return _regenerator["default"].awrap((0, _template["default"])(generator));
 
         case 18:
           selectedTemplate = _context.sent;
@@ -156,7 +150,7 @@ var init = function init() {
         case 46:
           _context.prev = 46;
           _context.next = 49;
-          return regeneratorRuntime.awrap((0, _file["default"])(files, template));
+          return _regenerator["default"].awrap((0, _file["default"])(files, template));
 
         case 49:
           _context.next = 57;
@@ -181,7 +175,7 @@ var init = function init() {
           return _context.abrupt("return");
 
         case 57:
-          (0, _util.infoLog)("Templates are created as you wish", "");
+          (0, _util.infoLog)('Templates are created as you wish', '');
 
         case 58:
         case "end":
